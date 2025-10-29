@@ -1,10 +1,15 @@
-from pathlib import Path
+import sys
 from toy_snake.utils import write_file
 
-def preprocess_algo1(path: Path):
-    print("preprocess_algo_1")
-    write_file(f"{path}_preprocessed1")  
+sys.stderr = open(snakemake.log[0], "a")
+sys.stdout = open(snakemake.log[0], "a")
 
-def ingest_data_algo2(path: Path):
+def preprocess_algo1():
+    print("preprocess_algo_1")
+    write_file(snakemake.output[0])  
+
+def preprocess_algo2():
     print("preprocess_algo_2")
-    write_file(f"{path}_preprocessed2")  
+    write_file(snakemake.output[0])  
+
+preprocess_algo1()

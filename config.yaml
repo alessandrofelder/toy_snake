@@ -1,0 +1,4 @@
+ingest:
+  script: "toy_snake/ingest_algo1.py"
+  env: "envs/ingest_env1.yaml"
+  params: [2,3,4]
