@@ -18,7 +18,7 @@ rule ingest:
     conda:
         config["ingest"]["env"]
     script:
-        config["ingest"]["script"]
+        "toy_snake/ingest.py"
 
 
 rule preprocess:

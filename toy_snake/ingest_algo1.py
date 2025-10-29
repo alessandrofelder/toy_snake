@@ -1,17 +1,8 @@
-import sys
-from toy_snake.utils import write_file
-
-sys.stderr = open(snakemake.log[0], "a")
-sys.stdout = open(snakemake.log[0], "a")
-
-def ingest_data_algo1():
-    print("ingest_algo_1")
+def ingest(params):
     import numpy as np
+    import sys
     print(sys.executable)
     print(np.__version__)
-    print(snakemake.config["ingest"].keys())
-    write_file(f"{snakemake.output[0]}", params=snakemake.config["ingest"]["params"])    
-
-if __name__ == "__main__":
-    ingest_data_algo1()
-
+    print("ingest_algo_1")
+    print(f"Parameters: {params}")
+    return params[2]
